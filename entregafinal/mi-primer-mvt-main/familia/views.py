@@ -5,6 +5,10 @@ from familia.forms import *
 
 from familia.models import Persona
 
+def login(request):
+    pass
+
+
 def index(request):
     personas = Persona.objects.all()
     template = loader.get_template('familia/lista_familiares.html')
