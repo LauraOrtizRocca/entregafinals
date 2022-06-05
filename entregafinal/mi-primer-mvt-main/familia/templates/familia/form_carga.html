@@ -12,7 +12,7 @@
      </div>
      <div class="row">
      <div class="col">
-      <form action="{% url  'agregar_persona'%}" method="post">
+      <form action= " {% url 'agregar' %}" method="post">
          {% csrf_token %} 
          {% bootstrap_form form %}
          {% bootstrap_button "Guardar" button_type="submit" button_class="btn-primary" %}
