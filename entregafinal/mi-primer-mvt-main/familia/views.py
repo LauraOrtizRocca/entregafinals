@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from django.template import loader
 from django.urls import reverse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from familia.forms import *
 
 from familia.models import Persona, Mascota, Alimento
@@ -65,10 +65,44 @@ def borrar(request, identificador):
 
 
 def actualizar(request, identificador):
-    '''
-    TODO: implementar una vista para actualización
-    '''
-    pass
+    if request.method == "GET":
+        persona = get_object_or_404(Persona, pk=int(identificador))
+        initial = {
+            "id": persona.id,
+            "nombre": persona.nombre, 
+            "apellido": persona.apellido, 
+            "email": persona.email,
+            "fecha_nacimiento": persona.fecha_nacimiento.strftime("%d/%m/%Y"),
+            "altura": persona.altura,
+  #          "nombre_mascota": persona.nombre_mascota,
+  #          "tipo": persona.tipo,
+  #          "raza": persona.raza,
+  #          "nombre_alimento": persona.nombre_alimento,
+  #          "peso": persona.peso
+        }
+    
+        form_actualizar = ActualizarForm(initial=initial)
+        return render(request, 'familia/form_carga.html', {'form': form_actualizar, 'actualizar': True})
+
+    elif request.method == "POST":
+        form_actualizar = ActualizarForm(request.POST)
+        if form_actualizar.is_valid():
+            persona = get_object_or_404(Persona, pk=form_actualizar.cleaned_data['id'])
+            persona.nombre = form_actualizar.cleaned_data['nombre']
+            persona.apellido = form_actualizar.cleaned_data['apellido']
+            persona.email = form_actualizar.cleaned_data['email']
+            persona.fecha_nacimiento = form_actualizar.cleaned_data['fecha_nacimiento']
+            persona.altura = form_actualizar.cleaned_data['altura']
+   #         persona.nombre_mascota = form_actualizar.cleaned_data['nombre_mascota']
+   #         persona.tipo = form_actualizar.cleaned_data['tipo']
+   #         persona.raza = form_actualizar.cleaned_data['raza']
+   #         persona.nombre_alimento = form_actualizar.cleaned_data['nombre_alimento']
+   #         persona.peso = form_actualizar.cleaned_data['peso']
+            persona.save()
+
+            return HttpResponseRedirect(reverse("index"))
+
+    
 
 # def agregar_mascota(request):
 #     '''

@@ -49,6 +49,7 @@
                     <td> {{p.peso}}</td> {% endcomment %}
                     <td>
                     {% url 'borrar' identificador=p.id as borrar_url %}
+                    {% url 'actualizar' identificador=p.id as actualizar_url %} 
                     {% bootstrap_button "Borrar" size="sm" button_class="btn-danger" button_type="link" href=borrar_url %}
                     {% bootstrap_button "Actualizar" size="sm" button_class="btn-warning" button_type="link" href=actualizar_url %}
                   </td>
