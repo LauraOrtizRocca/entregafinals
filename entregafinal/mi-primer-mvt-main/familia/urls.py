@@ -4,8 +4,8 @@ from familia import views
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('agregar_persona/', views.agregar_persona, name="agregar_persona"),
-    path('borrar/<identificador>', views.borrar, name="borrar"),
-    path('buscar/', views.buscar, name="buscar"),
-    path('agregar_mascota/', views.agregar_mascota, name="agregar_mascota"),
+    path('agregar_persona/', views.agregar_pesona, name="agregar_persona"),
+    path('borrar_persona/<identificador>', views.borrar_persona, name="borrar_persona"),
+    path('buscar_persona/', views.buscar_persona, name="buscar_persona"),
+    path('actualizar_persona/<identificador>', views.actualizar_persona, name="actualizar_persona"),
 ]

@@ -8,39 +8,42 @@
   
   <div class="row">
     <div class="col">
-      {% url 'agregar_' as agregar_url %}
-      {% url 'buscar' as buscar_url %}
-      {% bootstrap_button "Agregar" button_class="btn-success" button_type="link" href=agregar_url %} 
-      {% bootstrap_button "Buscar" button_class="btn-success" button_type="link" href=buscar_url %}  
-    <div>
-  <div>
+      {% url 'agregar_persona' as agregar_persona_url %}
+      {% url 'buscar_persona' as buscar_persona_url %}
+      {% bootstrap_button "Agregar persona" button_class="btn-success" button_type="link" href=agregar_persona_url %} 
+      {% bootstrap_button "Buscar persona" button_class="btn-success" button_type="link" href=buscar_persona_url %}  
+    </div>
+  </div>
 
   <div class="row">
     <div class="col">
         {% if personas %}
         <table class="table">
             <thead>
-                <th scope="col">Identificador</th>
+                <th scope="col">identificador</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Email</th>
-                <th scope="col">Fecha Nacimiento</th>
+                <th scope="col">Nacimiento</th>
                 <th scope="col">Altura</th>
-                <th scope="col">Acciones</th>
-            </thead>
-        
+              </thead>
+            
             {% for p in personas %}
             <tbody>
-                <tr>
+              <tr>
                     <th scope="row">{{p.id}} </th>
                     <td> {{p.nombre}} </td>
                     <td> {{p.apellido}} </td>
                     <td> {{p.email}} </td>
                     <td> {{p.fecha_nacimiento}} </td>
                     <td> {{p.altura}} m</td>
-                    {% url 'borrar' identificador=p.id as borrar_url %}
-                    <td>{% bootstrap_button "Borrar" size="sm" button_class="btn-danger" button_type="link" href=borrar_url %}</td>
-                </tr>  
+                    <td>
+                    {% url 'borrar_persona' identificador=p.id as borrar_persona_url %}
+                    {% url 'actualizar_persona' identificador=p.id as actualizar_persona_url %} 
+                    {% bootstrap_button "Borrar" size="sm" button_class="btn-danger" button_type="link" href=borrar_persona_url %}
+                    {% bootstrap_button "Actualizar" size="sm" button_class="btn-warning" button_type="link" href=actualizar_persona_url %}
+                  </td>
+                </tr>
             </tbody>
             {% endfor %}
         </table>

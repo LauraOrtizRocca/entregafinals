@@ -11,10 +11,10 @@
      </div>
      <div class="row">
      <div class="col">
-      <form action="{% url  'buscar'%}" method="post">
+      <form action="{% url  'buscar_persona'%}" method="post">
          {% csrf_token %} 
          {% bootstrap_form form_busqueda %}
-         {% bootstrap_button "Buscar" button_type="submit" button_class="btn-primary" %}
+         {% bootstrap_button "Buscar persona" button_type="submit" button_class="btn-primary" %}
       </form>
      </div>
    </div>
