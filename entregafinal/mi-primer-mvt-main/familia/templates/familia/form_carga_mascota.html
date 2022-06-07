@@ -1,0 +1,36 @@
+{% extends "familia/index.html" %}
+
+{% load django_bootstrap5 %}
+
+
+{% block cuerpo %}
+<div class="container">
+   <div class="row">
+     <div class="col">
+      <h1>CARGAR UNA MASCOTA</h1>
+     </div>
+     </div>
+     <div class="row">
+     <div class="col">
+
+     {% if actualizar_mascota %}
+         <form action="{% url  'actualizar_mascota'%}" method="post">
+     {% else %}     
+         <form action="{% url  'agregar_mascota'%}" method="post">
+     {% endif %}
+
+
+     {% csrf_token %} 
+     {% bootstrap_form form %}
+
+     {% if actualizar_mascota %}
+      {% bootstrap_button "Actualizar mascota" button_type="submit" button_class="btn-primary" %} 
+     {% else %}
+      {% bootstrap_button "Guardar mascota" button_type="submit" button_class="btn-primary" %}
+     {% endif %}
+
+    </form>
+   </div>
+  </div>
+ </div>
+{% endblock %}

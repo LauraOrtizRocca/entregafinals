@@ -1,5 +1,7 @@
 from django import forms
 
+        #FORMULARIOS PERSONAS
+
 class AgregarPersonaForm(forms.Form):
     nombre = forms.CharField(label="Nombre", max_length=100)
     apellido = forms.CharField(label="Apellido", max_length=100)
@@ -20,4 +22,20 @@ class BuscarPersonaForm(forms.Form):
     palabra_a_buscar = forms.CharField(label="Buscar_persona")
 
 class ActualizarPersonaForm(AgregarPersonaForm):
+    id = forms.IntegerField(widget = forms.HiddenInput())
+
+         #FORMULARIOS MASCOTAS
+
+class AgregarMascotaForm(forms.Form):
+    nombre_mascota = forms.CharField(label="Nombre mascota", max_length=100)
+    tipo = forms.CharField(label="Tipo", max_length=100)
+    raza = forms.CharField(label="Raza", max_length=100)
+    #nombre_alimento = forms.CharField(label="Nombre de alimento", max_length=100)
+    #peso = forms.CharField(label="Peso", max_length=100)
+
+
+class BuscarMascotaForm(forms.Form):
+    palabra_a_buscar = forms.CharField(label="Buscar_mascota")
+
+class ActualizarMascotaForm(AgregarMascotaForm):
     id = forms.IntegerField(widget = forms.HiddenInput())

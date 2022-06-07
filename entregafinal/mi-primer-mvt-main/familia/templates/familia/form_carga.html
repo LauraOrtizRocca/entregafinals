@@ -23,7 +23,7 @@
      {% csrf_token %} 
      {% bootstrap_form form %}
 
-     {% if actualizar %}
+     {% if actualizar_persona %}
       {% bootstrap_button "Actualizar persona" button_type="submit" button_class="btn-primary" %} 
      {% else %}
       {% bootstrap_button "Guardar persona" button_type="submit" button_class="btn-primary" %}
