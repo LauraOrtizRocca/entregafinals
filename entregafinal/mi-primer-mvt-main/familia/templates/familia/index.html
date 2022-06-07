@@ -14,6 +14,23 @@
   </li>
 </ul>
 
+{% block botones %}
+<div class="container">    
+  
+  <div class="row">
+    <div class="col">
+      {% url 'agregar_persona' as agregar_persona_url %}
+      {% url 'buscar_persona' as buscar_persona_url %}
+      {% bootstrap_button "Agregar persona" button_class="btn-success" button_type="link" href=agregar_persona_url %} 
+      {% bootstrap_button "Buscar persona" button_class="btn-success" button_type="link" href=buscar_persona_url %} 
+      {% url 'agregar_mascota' as agregar_mascota_url %}
+      {% url 'buscar_mascota' as buscar_mascota_url %}
+      {% bootstrap_button "Agregar mascota" button_class="btn-success" button_type="link" href=agregar_mascota_url %} 
+      {% bootstrap_button "Buscar mascota" button_class="btn-success" button_type="link" href=buscar_mascota_url %}   
+    </div>
+  </div>
+{% endblock %}
+
 {% block cuerpo %}
 {% endblock %}
 
