@@ -1,4 +1,4 @@
-# Entrega1+MatiasRoberto
+# Entrega1+MatiasRoberto+LauraOritz+MatiasH
 
 # Para ingresar a nuestra aplicacion web debemos:
 1) tener instalado python
