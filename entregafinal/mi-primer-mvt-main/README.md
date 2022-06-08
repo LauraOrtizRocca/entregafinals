@@ -1,92 +1,27 @@
-# Mi Primer MVT Django
+# Entrega1+MatiasRoberto
 
-Ejemplo de MVT para la clase de Coder House python, este codigo contiene:
- - Vistas 
- - Formularios
- - Modelos
- - Templates
+# Para ingresar a nuestra aplicacion web debemos:
+1) tener instalado python
+2)tener instalado django
+3)tener instalado bootsrap5
+4)clonar el proyecto con git
+5)migrar todo lo necesario
+6)correr el servidor
 
-**importnante: Este ejemplo fue probado con python 3.8.13 y Django 4.0.4**
+# una vez que corrimos el servidor entramos al localhost:
+1)persona:
+a)agregar persona, rellenando correctamente todos los datos
+b)buscar una persona ya agregada
+c)una vez agregada una persona nos permite borrarla dando click en "borrar"
+d)una vez agregada una persona nos permite actualizar sus datos dando click en "actualizar"
+1)mascota:
+a)agregar mascota, rellenando correctamente todos los datos
+b)buscar una mascota ya agregada
+c)una vez agregada una mascota nos permite borrarla dando click en "borrar"
+d)una vez agregada una mascota nos permite actualizar sus datos dando click en "actualizar"
 
-## Checkear que tengas Python
+# Para volver al menu principal(index):
+1)debemos dar click en la cabecera(arriba a la izquierda) al boton menu principal
 
-Para comenzar primero tienen que asegurarse que tienen instalado, python.
-
-En windows tiene que abrir una terminal cmd o powershell.
-
-```PS
-PS C:\> python --version
-Python 3.X.X 
-```
-
-En Linux/Mac tiene que abrir una terminal bash
-
-```bash
-$ python --version
-Python 3.X.X 
-```
-
-Si les aparece la versión todo OK pueden seguir. Caso contrario descarguen python desde este [link](https://www.python.org/downloads/).
-
-## Instalar django
-
-En una terminal cmd o powershell desde windows:
-
-```PS
-C:\> pip install django
-```
-
-Linux/Mac:
-
-```bash
-$ pip install django
-```
-
-Si no arrojo errores esto es suficiente para poder correr el projecto.
-
-
-# Instalar django bootstrap v5
-
-```PS
-C:\> pip install django-bootstrap-v5
-```
-
-Linux/Mac:
-
-```bash
-$ pip install django-bootstrap-v5
-```
-## Clonar el projecto con git
-
-windows:
-
-```PS
-C:\> git clone https://github.com/martinezger/mi-primer-mvt.git
-```
-
-Linux/Mac:
-```bash
-$ git clone https://github.com/martinezger/mi-primer-mvt.git
-```
-
-## Correr el Servidor
-
-Los siguinetes comandos son analogos en Mac/Linux/Windows:
-
-```bash
-cd mi-primer-mvt
-python manage.py migrate
-```
-La consola mostrara las migraciones de la base de datos que se realizaron.
-
-Luego arrancamos el servidor web
-
-```bash
-python manage.py runserver
-```
-Listo ya tenes corriendo el ejemplo.
-
-ahora Hace click en el siguiente link para ver el ejemplo corriendo: 
-
-[http://localhost:8000/](http://localhost:8000/)
+# todavia no se puedw ver lista de personas o mascotas
 
