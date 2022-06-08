@@ -3,6 +3,7 @@ from familia import views
 
 
 urlpatterns = [
+    path('index_2/', views.index_2, name="index_2"),
     path('', views.index, name="index"),
     path('agregar_persona/', views.agregar_pesona, name="agregar_persona"),
     path('borrar_persona/<identificador>', views.borrar_persona, name="borrar_persona"),
