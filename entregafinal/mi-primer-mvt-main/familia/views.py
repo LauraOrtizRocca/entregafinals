@@ -11,7 +11,7 @@ from familia.models import Persona, Mascota, Alimento
 def index(request):
     return render(request, "familia/index.html", {})
 
-"""def index(request):
+def index_2(request):
     personas = Persona.objects.all()
     mascotas = Mascota.objects.all()
     alimentos = Alimento.objects.all()
@@ -22,7 +22,7 @@ def index(request):
         'alimentos': alimentos,
     }
     template = loader.get_template('familia/lista_familiares.html')
-    return HttpResponse(render(request, 'familia/lista_familiares.html', context))"""
+    return HttpResponse(render(request, 'familia/lista_familiares.html', context))
 
         #DEFINO PERSONAS Y SUS ACCIONES
 
@@ -47,7 +47,7 @@ def agregar_pesona(request):
             Persona(nombre=nombre, apellido=apellido, email=email, fecha_nacimiento=fecha_nacimiento, altura=altura).save()
            # Mascota(nombre_mascota=nombre_mascota, tipo= tipo, raza=raza).save()
            # Alimento(nombre_alimento=nombre_alimento, peso=peso).save()
-            return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("index_2"))
 
     elif request.method == "GET":
         form = AgregarPersonaForm()
@@ -144,7 +144,7 @@ def agregar_mascota(request):
 
             Mascota(nombre_mascota=nombre_mascota, tipo= tipo, raza=raza).save()
            # Alimento(nombre_alimento=nombre_alimento, peso=peso).save()
-            return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("index_2"))
 
     elif request.method == "GET":
         form = AgregarMascotaForm()
