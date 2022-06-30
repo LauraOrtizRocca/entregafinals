@@ -1,0 +1,28 @@
+{% extends "paginas/base.html" %}
+{% load static %}
+
+
+{% block title %}
+
+Agregar nuevo anime
+
+{% endblock %}
+
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Crear un anime
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del anime</h4>
+        
+        {% include 'animes/formulario_anime.html' %}
+
+    </div>
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
+{% endblock %}

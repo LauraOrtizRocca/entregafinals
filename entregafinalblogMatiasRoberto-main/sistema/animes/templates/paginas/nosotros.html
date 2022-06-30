@@ -1,0 +1,32 @@
+
+{% extends "paginas/base.html" %}
+{% load static %}
+
+{% block title %}
+
+Inicio
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+<div class="p-5 bg-light">
+    <div class="container">
+        <h1 class="display-3">Bienvenidos al sitio</h1>
+        <p class="lead">Emepzar a ingresar</p>
+        <hr class="my-2">
+        <p>Elige que quieres cargar</p>
+        <p class="lead">
+            <a class="btn btn-success" href="{% url 'favoritos' %}" role="button"> Mis favoritos</a>
+            <a class="btn btn-success" href="{% url 'animes' %}" role="button">Animes</a>
+            <a class="btn btn-success" href="{% url 'series' %}" role="button">Series</a>
+            <a class="btn btn-success" href="{% url 'peliculas' %}" role="button">Peliculas</a>
+            
+            
+        </p>
+    </div>
+</div>
+
+{% endblock %}

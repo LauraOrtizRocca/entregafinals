@@ -1,0 +1,28 @@
+{% extends "paginas/base.html" %}
+{% load static %}
+
+{% block title %}
+
+Actualizar un anime
+
+{% endblock %}
+
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Actualizar informacion de una pelicula
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos de la pelicula</h4>
+        
+        {% include 'peliculas/formulario_pelicula.html' %}
+
+    </div>
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
+
+{% endblock %}
